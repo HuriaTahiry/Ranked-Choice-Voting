@@ -64,17 +64,11 @@ public class ElectionResults {
             }
         }
 
-        //printPercentages(tallies(convert(fileContents)));
-
-
-        // ***********************************************
-        // Your code below here: execute the RCV process,
-        // ensuring to make use of the remaining methods
-        // ***********************************************
+        
     }
 
 
-    // Create your methods below here
+
     public static ArrayList<Ballot> convert(String[] filesContents) {
         ArrayList<Ballot> ballotList = new ArrayList<>();
 
@@ -104,7 +98,7 @@ public class ElectionResults {
     public static int countTotalVotes(HashMap<String, Integer> voteCounts) {
         int totalVotes = 0;
 
-        // Iterate through the vote counts and sum the total votes
+
         for (int votes : voteCounts.values()) {
             totalVotes += votes;
         }
@@ -115,7 +109,7 @@ public class ElectionResults {
     public static Result analyze(HashMap<String, Integer> voteCounts) {
         int totalVotes = countTotalVotes(voteCounts);
 
-        // Determine how many votes are needed to win (assuming simple majority)
+        
         int votesToWin = (totalVotes / 2) + 1;
         int leastNumVotes = 1000000;
 //        boolean FoundWinner = false;
@@ -128,8 +122,7 @@ public class ElectionResults {
             if (candidateVotes >= votesToWin) {
                 result = new Result(candidate, true);
                 return result;
-                //System.out.print(candidate);
-                //System.out.println("winner");
+
 
             } else {
                 if (candidateVotes < leastNumVotes) {
